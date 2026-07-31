@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Meta -->
+  <title>Muhammad Anfal — Full-Stack Software Engineer</title>
+  <meta name="description" content="Muhammad Anfal is a Full-Stack Software Engineer specializing in scalable backend systems, REST APIs, cloud-native applications, and high-performance mobile experiences." />
+  <meta name="keywords" content="Muhammad Anfal, Full-Stack Engineer, Backend Developer, Python, Django, FastAPI, Flutter, React, AWS, Firebase, Software Engineer Pakistan" />
+  <meta name="author" content="Muhammad Anfal" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open  Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://muhammmadanfal.dev/" />
+  <meta property="og:title" content="Muhammad Anfal — Full-Stack Software Engineer" />
+  <meta property="og:description" content="Designing scalable backend systems & high-performance APIs. Python · Django · FastAPI · Flutter · React · AWS" />
+  <meta property="og:image" content="assets/anfal.jpeg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muhammad Anfal — Full-Stack Software Engineer" />
+  <meta name="twitter:description" content="Designing scalable backend systems & high-performance APIs." />
+  <meta name="twitter:image" content="assets/anfal.jpeg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/anfal.jpeg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     SCROLL PROGRESS BAR
+     ============================================================ -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============================================================
+     CURSOR GLOW
+     ============================================================ -->
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header id="navbar" role="banner">
+  <nav class="nav-container" aria-label="Primary navigation">
+    <a href="#home" class="nav-logo" aria-label="Muhammad Anfal - Home">
+      <img src="assets/anfal.jpeg" alt="Muhammad Anfal" class="logo-image" />
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#home"       class="nav-link active" aria-current="page">Home</a></li>
+      <li><a href="#about"      class="nav-link">About</a></li>
+      <li><a href="#skills"     class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects"   class="nav-link">Projects</a></li>
+      <li><a href="#education"  class="nav-link">Education</a></li>
+      <li><a href="#contact"    class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-outline btn-sm" aria-label="Download Resume">
+        <i class="fa-solid fa-download" aria-hidden="true"></i>
+        <span>Resume</span>
+      </a>
+      <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" aria-label="LinkedIn Profile">
+        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </nav>
+</header>
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <ul role="list">
+    <li><a href="#home"       class="mobile-nav-link">Home</a></li>
+    <li><a href="#about"      class="mobile-nav-link">About</a></li>
+    <li><a href="#skills"     class="mobile-nav-link">Skills</a></li>
+    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+    <li><a href="#projects"   class="mobile-nav-link">Projects</a></li>
+    <li><a href="#education"  class="mobile-nav-link">Education</a></li>
+    <li><a href="#contact"    class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-primary">
+      <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<main id="main-content">
+<section id="home" class="hero" aria-label="Hero">
+
+  <!-- Background Effects -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-noise"></div>
+    <canvas id="particles-canvas"></canvas>
+  </div>
+
+  <div class="hero-container">
+
+    <!-- Left: Text Content -->
+    <div class="hero-content" data-aos="fade-right" data-aos-duration="900">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span>Available for opportunities</span>
+      </div>
+
+      <h1 class="hero-name">Muhammad<br /><span class="name-accent">Anfal</span></h1>
+
+      <div class="hero-title-wrap">
+        <span class="hero-title-static">I'm a </span>
+        <span class="hero-typed" id="typed-text" aria-live="polite"></span>
+      </div>
+
+      <p class="hero-subtitle">Designing Scalable Backend Systems &amp; High-Performance APIs</p>
+
+      <p class="hero-description">
+        Passionate software engineer specializing in scalable backend systems, modern web technologies,
+        cloud-native applications, and high-performance mobile experiences. I enjoy transforming complex
+        ideas into elegant, maintainable, and production-ready software.
+      </p>
+
+      <div class="hero-actions">
+        <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+        </a>
+        <a href="#projects" class="btn btn-outline btn-lg">
+          <i class="fa-solid fa-briefcase" aria-hidden="true"></i> View Projects
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:anfal.dev.12@gmail.com" class="social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="social-link" aria-label="Contact">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="hero-image-wrap" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+      <div class="hero-image-outer">
+        <div class="hero-image-ring ring-1" aria-hidden="true"></div>
+        <div class="hero-image-ring ring-2" aria-hidden="true"></div>
+        <div class="hero-image-glow" aria-hidden="true"></div>
+        <div class="hero-image-frame">
+          <img src="assets/anfal.jpeg" alt="Muhammad Anfal — Full-Stack Software Engineer" class="hero-photo" loading="eager" />
+        </div>
+        <!-- Floating Icons -->
+        <div class="float-icon float-icon-1" aria-hidden="true"><i class="devicon-python-plain colored"></i></div>
+        <div class="float-icon float-icon-2" aria-hidden="true"><i class="devicon-django-plain"></i></div>
+        <div class="float-icon float-icon-3" aria-hidden="true"><i class="devicon-flutter-plain colored"></i></div>
+        <div class="float-icon float-icon-4" aria-hidden="true"><i class="devicon-react-original colored"></i></div>
+        <div class="float-icon float-icon-5" aria-hidden="true"><i class="devicon-amazonwebservices-original colored"></i></div>
+        <div class="float-icon float-icon-6" aria-hidden="true"><i class="devicon-docker-plain colored"></i></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span>Scroll</span>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     TECH STACK MARQUEE
+     ============================================================ -->
+<section class="marquee-section" aria-label="Technologies">
+  <div class="marquee-label">Tech Stack</div>
+  <div class="marquee-track" aria-hidden="true">
+    <div class="marquee-inner" id="marquee-inner">
+      <!-- Set 1 -->
+      <div class="marquee-item" title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+      <div class="marquee-item" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+      <div class="marquee-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+      <div class="marquee-item" title="React"><i class="devicon-react-original colored"></i><span>React</span></div>
+      <div class="marquee-item" title="Flutter"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+      <div class="marquee-item" title="Dart"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+      <div class="marquee-item" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+      <div class="marquee-item" title="Django"><i class="devicon-django-plain"></i><span>Django</span></div>
+      <div class="marquee-item" title="FastAPI"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+      <div class="marquee-item" title="Firebase"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+      <div class="marquee-item" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+      <div class="marquee-item" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+      <div class="marquee-item" title="SQLite"><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
+      <div class="marquee-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+      <div class="marquee-item" title="Linux"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+      <div class="marquee-item" title="AWS"><i class="devicon-amazonwebservices-original colored"></i><span>AWS</span></div>
+      <div class="marquee-item" title="Redis"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+      <div class="marquee-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+      <div class="marquee-item" title="GitHub"><i class="devicon-github-original"></i><span>GitHub</span></div>
+      <div class="marquee-item" title="Postman"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+      <div class="marquee-item" title="Tailwind CSS"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind</span></div>
+      <div class="marquee-item" title="Android Studio"><i class="devicon-androidstudio-plain colored"></i><span>Android Studio</span></div>
+      <div class="marquee-item" title="PyCharm"><i class="devicon-pycharm-plain colored"></i><span>PyCharm</span></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="marquee-item" title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+      <div class="marquee-item" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+      <div class="marquee-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+      <div class="marquee-item" title="React"><i class="devicon-react-original colored"></i><span>React</span></div>
+      <div class="marquee-item" title="Flutter"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+      <div class="marquee-item" title="Dart"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+      <div class="marquee-item" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+      <div class="marquee-item" title="Django"><i class="devicon-django-plain"></i><span>Django</span></div>
+      <div class="marquee-item" title="FastAPI"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+      <div class="marquee-item" title="Firebase"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+      <div class="marquee-item" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+      <div class="marquee-item" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+      <div class="marquee-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+      <div class="marquee-item" title="AWS"><i class="devicon-amazonwebservices-original colored"></i><span>AWS</span></div>
+      <div class="marquee-item" title="Redis"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+      <div class="marquee-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+      <div class="marquee-item" title="Tailwind CSS"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Who I Am</span>
+      <h2 class="section-title" id="about-heading">About Me</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Left: Image + decorative -->
+      <div class="about-image-col" data-aos="fade-right" data-aos-duration="800">
+        <div class="about-image-wrap">
+          <div class="about-img-glow" aria-hidden="true"></div>
+          <img src="assets/anfal.jpeg" alt="Muhammad Anfal" class="about-photo" loading="lazy" />
+          <div class="about-badge-card" aria-label="Current role">
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            <div>
+              <span class="badge-title">Currently</span>
+              <span class="badge-sub">Dark Bytes · Software Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content-col" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+        <p class="about-intro">
+          Hi, I'm <strong>Muhammad Anfal</strong>, a Full-Stack Software Engineer passionate about
+          building scalable backend systems, REST APIs, cloud-ready applications, and cross-platform
+          mobile experiences.
+        </p>
+        <p class="about-text">
+          I specialize in <strong>Python, Django, FastAPI, Flutter, React, Firebase,</strong> and
+          <strong>AWS</strong>, focusing on clean architecture, performance optimization, and
+          maintainable software.
+        </p>
+        <p class="about-text">
+          I enjoy solving challenging engineering problems and continuously learning new technologies
+          to build impactful digital products.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+            <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="280">
+            <span class="stat-number" data-target="8">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="360">
+            <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="440">
+            <span class="stat-number" data-target="40">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">GitHub Repos</span>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-primary">
+            <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Get in Touch
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS SECTION
+     ============================================================ -->
+<section id="skills" class="section section-alt" aria-labelledby="skills-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">What I Work With</span>
+      <h2 class="section-title" id="skills-heading">Skills &amp; Technologies</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <!-- Frontend -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="skills-category-title">
+        <i class="fa-solid fa-display" aria-hidden="true"></i> Frontend Development
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card" data-tilt><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind CSS</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-react-original colored"></i><span>React</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-map-location-dot" style="color:#4285F4"></i><span>Google Maps</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-bell" style="color:#E11D48"></i><span>Push Notifications</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-cubes" style="color:#7C3AED"></i><span>Bloc / Provider</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-layer-group" style="color:#0EA5E9"></i><span>MVVM</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-mobile-screen-button" style="color:#22C55E"></i><span>Responsive Design</span></div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="skills-category-title">
+        <i class="fa-solid fa-server" aria-hidden="true"></i> Backend Development
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card" data-tilt><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-django-plain"></i><span>Django</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-plug" style="color:#E11D48"></i><span>REST APIs</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-shield-halved" style="color:#F59E0B"></i><span>JWT Auth</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-key" style="color:#A78BFA"></i><span>Sessions</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-network-wired" style="color:#22C55E"></i><span>WebSockets</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-rotate" style="color:#F97316"></i><span>Celery</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-database" style="color:#0EA5E9"></i><span>ORM</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-credit-card" style="color:#10B981"></i><span>Payment Gateway</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+      </div>
+    </div>
+
+    <!-- Database -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="skills-category-title">
+        <i class="fa-solid fa-database" aria-hidden="true"></i> Database
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card" data-tilt><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-box-archive" style="color:#F59E0B"></i><span>Hive</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-bolt" style="color:#E11D48"></i><span>Optimization</span></div>
+      </div>
+    </div>
+
+    <!-- Cloud & DevOps -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="250">
+      <h3 class="skills-category-title">
+        <i class="fa-brands fa-aws" aria-hidden="true"></i> Cloud &amp; DevOps
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card" data-tilt><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-linux-plain"></i><span>Linux</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-amazonwebservices-original colored"></i><span>AWS EC2</span></div>
+        <div class="skill-card" data-tilt><i class="fa-brands fa-aws" style="color:#FF9900"></i><span>AWS S3</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-user-shield" style="color:#FF9900"></i><span>AWS IAM</span></div>
+        <div class="skill-card" data-tilt><i class="fa-solid fa-hard-drive" style="color:#FF9900"></i><span>AWS RDS</span></div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="skills-category-title">
+        <i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card" data-tilt><i class="devicon-git-plain colored"></i><span>Git</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-androidstudio-plain colored"></i><span>Android Studio</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-pycharm-plain colored"></i><span>PyCharm</span></div>
+        <div class="skill-card" data-tilt><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE SECTION
+     ============================================================ -->
+<section id="experience" class="section" aria-labelledby="experience-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Where I've Worked</span>
+      <h2 class="section-title" id="experience-heading">Experience</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Entry 1: Dark Bytes (Current) -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot" aria-hidden="true">
+          <div class="timeline-dot-inner"></div>
+        </div>
+        <div class="timeline-connector" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div class="timeline-role-wrap">
+              <span class="timeline-company">Dark Bytes</span>
+              <h3 class="timeline-role">Software Engineer</h3>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-badge timeline-badge-current">Current</span>
+              <span class="timeline-date">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Jan 2026 – Present
+              </span>
+            </div>
+          </div>
+          <ul class="timeline-responsibilities" aria-label="Responsibilities at Dark Bytes">
+            <li>Architect and develop scalable backend systems using Python, Django &amp; FastAPI</li>
+            <li>Design and maintain high-performance REST APIs with authentication and authorization</li>
+            <li>Optimize database queries and schema design for production workloads</li>
+            <li>Implement background task processing with Celery and Redis</li>
+            <li>Collaborate on cloud deployment pipelines and infrastructure on AWS</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">REST API</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 2: IT Genesis -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot" aria-hidden="true">
+          <div class="timeline-dot-inner"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div class="timeline-role-wrap">
+              <span class="timeline-company">IT Genesis</span>
+              <h3 class="timeline-role">Software Engineer</h3>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-date">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Jun 2024 – Dec 2025
+              </span>
+            </div>
+          </div>
+          <ul class="timeline-responsibilities" aria-label="Responsibilities at IT Genesis">
+            <li>Built cross-platform mobile applications using Flutter with Bloc &amp; Provider patterns</li>
+            <li>Developed backend APIs using Python and Django REST Framework</li>
+            <li>Integrated Firebase services including Auth, Firestore, and Cloud Messaging</li>
+            <li>Consumed REST APIs and implemented real-time data synchronization with WebSockets</li>
+            <li>Integrated Google Maps for location-based features in production apps</li>
+            <li>Delivered pixel-perfect responsive UIs following Clean Architecture principles</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">Google Maps</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">What I've Built</span>
+      <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 1: ThinkMatte -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-1" aria-hidden="true">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+          <span class="project-featured-badge">Featured</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">01</div>
+          <h3 class="project-title">ThinkMatte</h3>
+          <p class="project-description">
+            Comprehensive medical learning &amp; exam prep platform for MDCAT and MBBS students. Includes mock tests, question banks, digital notes, video lectures, personalized study schedules, and performance analytics with an admin dashboard.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Firebase FCM</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Live Chat System -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="150" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-2" aria-hidden="true">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">02</div>
+          <h3 class="project-title">Live Chat System</h3>
+          <p class="project-description">
+            Real-time messaging platform with one-to-one &amp; group conversations, online presence indicators, typing indicators, read receipts, media sharing, and push notifications for seamless communication.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Django Channels</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Firebase FCM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: eHomes -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-3" aria-hidden="true">
+            <i class="fa-solid fa-house"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">03</div>
+          <h3 class="project-title">eHomes – E-Commerce</h3>
+          <p class="project-description">
+            Full-featured e-commerce marketplace with product catalog, shopping cart, wishlist, order management, Stripe payment integration, product reviews, and inventory management with admin panel.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Stripe</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: MatchConnect -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="250" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-4" aria-hidden="true">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">04</div>
+          <h3 class="project-title">MatchConnect</h3>
+          <p class="project-description">
+            Modern dating platform with personalized profiles, intelligent match suggestions, swipe functionality, real-time chat, profile verification, location-based discovery, and push notifications.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Firebase FCM</span>
+            <span class="tech-tag">Google Maps</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5: Trading Platform -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-5" aria-hidden="true">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">05</div>
+          <h3 class="project-title">Trading Platform</h3>
+          <p class="project-description">
+            Web-based trading platform for managing investments, executing trades, monitoring portfolios, and analyzing market performance with financial reporting and intuitive analytics dashboard.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Chart.js</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6: Financial Transaction Tracker -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="150" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-6" aria-hidden="true">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">06</div>
+          <h3 class="project-title">Financial Tracker</h3>
+          <p class="project-description">
+            Financial management web app for monitoring transactions, managing digital wallets, generating reports, and maintaining accounting records with real-time cash flow insights and audit logs.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Chart.js</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 7: Bonope POS -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-7" aria-hidden="true">
+            <i class="fa-solid fa-cash-register"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">07</div>
+          <h3 class="project-title">Bonope POS</h3>
+          <p class="project-description">
+            Cloud-based Point of Sale system for retail businesses with sales management, inventory tracking, offline sync, customer management, barcode scanning, invoice generation, and analytics.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Offline Sync</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 8: Enterprise CRM -->
+      <article class="project-card" data-aos="fade-up" data-aos-delay="250" data-tilt>
+        <div class="project-card-image">
+          <div class="project-img-placeholder project-img-8" aria-hidden="true">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <div class="project-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-number" aria-hidden="true">08</div>
+          <h3 class="project-title">Enterprise CRM</h3>
+          <p class="project-description">
+            Full-featured CRM platform centralizing customer interactions, sales pipelines, lead management, support tickets, and business workflows with role-based access control and analytics.
+          </p>
+          <div class="project-tech-list">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">DRF</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">RBAC</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION SECTION
+     ============================================================ -->
+<section id="education" class="section" aria-labelledby="education-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Academic Background</span>
+      <h2 class="section-title" id="education-heading">Education</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="education-card-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="education-card">
+        <div class="education-icon-col" aria-hidden="true">
+          <div class="edu-icon-wrap">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="edu-line"></div>
+        </div>
+        <div class="education-content">
+          <div class="education-header">
+            <div>
+              <span class="edu-institution">University of Sargodha</span>
+              <h3 class="edu-degree">Bachelor of Science in Computer Science</h3>
+            </div>
+            <div class="edu-meta">
+              <div class="edu-cgpa">
+                <span class="cgpa-label">CGPA</span>
+                <span class="cgpa-value">3.65 <span class="cgpa-total">/ 4.00</span></span>
+              </div>
+              <span class="edu-date">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                April 2021 – May 2025
+              </span>
+            </div>
+          </div>
+          <div class="edu-highlights">
+            <div class="edu-highlight">
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+              Strong foundation in data structures, algorithms, and software engineering
+            </div>
+            <div class="edu-highlight">
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+              Coursework in database systems, distributed computing, and cloud architecture
+            </div>
+            <div class="edu-highlight">
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+              Graduated with honors — CGPA 3.65 / 4.00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title" id="contact-heading">Let's Build Something<br /><span class="text-accent">Amazing</span> Together</h2>
+      <div class="section-line" aria-hidden="true"></div>
+      <p class="section-subtitle">
+        I'm open to new opportunities, collaborations, and interesting projects.
+        Drop me a message and I'll get back to you.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Cards -->
+      <div class="contact-cards" data-aos="fade-right" data-aos-delay="100">
+
+        <a href="mailto:anfal.dev.12@gmail.com" class="contact-card" aria-label="Send email to anfal.dev.12@gmail.com">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="contact-card-body">
+            <span class="contact-card-label">Email</span>
+            <span class="contact-card-value">anfal.dev.12@gmail.com</span>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-card-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a href="tel:+923107855785" class="contact-card" aria-label="Call +92 310 7855785">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          </div>
+          <div class="contact-card-body">
+            <span class="contact-card-label">Phone</span>
+            <span class="contact-card-value">+92 310 7855785</span>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-card-arrow" aria-hidden="true"></i>
+        </a>
+
+        <div class="contact-card" aria-label="Location: Lahore, Pakistan">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </div>
+          <div class="contact-card-body">
+            <span class="contact-card-label">Location</span>
+            <span class="contact-card-value">Lahore, Pakistan</span>
+          </div>
+          <i class="fa-solid fa-map-pin contact-card-arrow" aria-hidden="true"></i>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="100">
+        <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" required aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required aria-required="true" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="What's this about?" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full" id="form-submit-btn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span>Send Message</span>
+          </button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="#home" class="footer-logo" aria-label="Muhammad Anfal - Home">
+        <img src="assets/anfal.jpeg" alt="Muhammad Anfal" class="footer-logo-image" />
+      </a>
+      <div class="footer-brand-text">
+        <span class="footer-name">Muhammad Anfal</span>
+        <span class="footer-role">Full-Stack Software Engineer</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="https://github.com/Axfal" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/muhammad-anfal-01648238a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:anfal.dev.12@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Muhammad Anfal — Built with <span class="footer-heart" aria-hidden="true">♥</span> using HTML, CSS &amp; JavaScript</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<!-- Vanilla Tilt -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<!-- Main Script -->
+<script src="script.js"></script>
+</body>
+</html>
