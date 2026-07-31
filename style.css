@@ -848,6 +848,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: 2rem;
   transition: transform var(--transition-base), filter var(--transition-base);
 }
+/* Custom PNG icon in marquee — matches font-icon sizing */
+.marquee-item .marquee-custom-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+.marquee-item:hover .marquee-custom-icon {
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 4px 12px var(--accent-glow));
+}
 .marquee-item span {
   font-size: 0.7rem;
   font-weight: var(--fw-medium);
@@ -1083,6 +1095,20 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   transition: transform var(--transition-spring);
 }
 .skill-card:hover i { transform: scale(1.15) translateY(-2px); }
+
+/* Custom PNG icon in skill card — same size/behaviour as font icons */
+.skill-card .skill-custom-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-spring), filter var(--transition-base);
+}
+.skill-card:hover .skill-custom-icon {
+  transform: scale(1.15) translateY(-2px);
+  filter: drop-shadow(0 4px 10px var(--accent-glow));
+}
 
 .skill-card span {
   font-size: 0.75rem;
