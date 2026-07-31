@@ -160,6 +160,7 @@ function initActiveNavLinks() {
 function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
+  const backdrop  = document.getElementById('mobile-nav-backdrop');
   if (!hamburger || !mobileNav) return;
 
   const mobileLinks = mobileNav.querySelectorAll('.mobile-nav-link');
@@ -167,32 +168,41 @@ function initMobileMenu() {
   const openMenu = () => {
     hamburger.classList.add('open');
     mobileNav.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
     mobileNav.removeAttribute('aria-hidden');
     document.body.style.overflow = 'hidden';
+    // Move focus to first link for keyboard accessibility
+    const firstLink = mobileNav.querySelector('.mobile-nav-link');
+    if (firstLink) requestAnimationFrame(() => firstLink.focus());
   };
 
   const closeMenu = () => {
     hamburger.classList.remove('open');
     mobileNav.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     mobileNav.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    hamburger.focus();
   };
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // Close on link click
+  // Close on nav link click
   mobileLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
-  // Close on Escape key
+  // Close on backdrop click
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && hamburger.classList.contains('open')) closeMenu();
   });
 
-  // Close on outside click
+  // Close when clicking outside the drawer (but not the hamburger)
   document.addEventListener('click', (e) => {
     if (
       mobileNav.classList.contains('open') &&
@@ -200,6 +210,22 @@ function initMobileMenu() {
       !hamburger.contains(e.target)
     ) {
       closeMenu();
+    }
+  });
+
+  // Trap focus inside the open drawer
+  mobileNav.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || !mobileNav.classList.contains('open')) return;
+    const focusable = Array.from(
+      mobileNav.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])')
+    ).filter((el) => !el.disabled && el.offsetParent !== null);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
     }
   });
 }
@@ -857,39 +883,7 @@ function initPageReveal() {
 })();
 
 /* ============================================================
-   24. KEYBOARD NAVIGATION TRAP FOR MOBILE MENU
-   ============================================================ */
-(function initFocusTrap() {
-  const mobileNav = document.getElementById('mobile-nav');
-  if (!mobileNav) return;
-
-  mobileNav.addEventListener('keydown', (e) => {
-    if (!mobileNav.classList.contains('open')) return;
-
-    const focusable = mobileNav.querySelectorAll(
-      'a[href], button:not([disabled]), input:not([disabled])'
-    );
-    const first = focusable[0];
-    const last  = focusable[focusable.length - 1];
-
-    if (e.key === 'Tab') {
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    }
-  });
-})();
-
-/* ============================================================
-   25. CONTACT CARD HOVER SOUND (subtle visual feedback boost)
+   24. CONTACT CARD HOVER FEEDBACK
    ============================================================ */
 (function initContactCardFeedback() {
   document.querySelectorAll('.contact-card').forEach((card) => {

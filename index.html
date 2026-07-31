@@ -91,30 +91,34 @@
       </a>
     </div>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav">
       <span class="ham-line"></span>
       <span class="ham-line"></span>
       <span class="ham-line"></span>
     </button>
+
+    <!-- Dropdown menu — anchored inside the navbar -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="#home"       class="mobile-nav-link">Home</a></li>
+        <li><a href="#about"      class="mobile-nav-link">About</a></li>
+        <li><a href="#skills"     class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#projects"   class="mobile-nav-link">Projects</a></li>
+        <li><a href="#education"  class="mobile-nav-link">Education</a></li>
+        <li><a href="#contact"    class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-primary">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> Resume
+        </a>
+      </div>
+    </div>
   </nav>
 </header>
-<!-- Mobile Nav Overlay -->
-<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <ul role="list">
-    <li><a href="#home"       class="mobile-nav-link">Home</a></li>
-    <li><a href="#about"      class="mobile-nav-link">About</a></li>
-    <li><a href="#skills"     class="mobile-nav-link">Skills</a></li>
-    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
-    <li><a href="#projects"   class="mobile-nav-link">Projects</a></li>
-    <li><a href="#education"  class="mobile-nav-link">Education</a></li>
-    <li><a href="#contact"    class="mobile-nav-link">Contact</a></li>
-  </ul>
-  <div class="mobile-nav-actions">
-    <a href="assets/Muhammad Anfal.pdf" download="Muhammad Anfal.pdf" class="btn btn-primary">
-      <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
-    </a>
-  </div>
-</div>
+
+<!-- Backdrop — tap outside to close (outside header so it covers full viewport) -->
+<div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
 
 <!-- ============================================================
      HERO SECTION
