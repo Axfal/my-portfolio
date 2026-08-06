@@ -161,67 +161,110 @@ function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
   const backdrop  = document.getElementById('mobile-nav-backdrop');
-  if (!hamburger || !mobileNav) return;
 
-  const mobileLinks = mobileNav.querySelectorAll('.mobile-nav-link');
+  // Guard: bail if elements missing or already initialised
+  // Prevents duplicate listeners if this function ever runs twice
+  if (!hamburger || !mobileNav || hamburger.dataset.menuInit) return;
+  hamburger.dataset.menuInit = '1';
 
+  // ── All interactive elements inside the menu that should close it ──
+  // Deliberately includes the resume <a> download button, not just nav links
+  const closeTargets = mobileNav.querySelectorAll(
+    '.mobile-nav-link, .mobile-nav-actions a, .mobile-nav-actions button'
+  );
+
+  // Track what had focus before opening so we can restore it on close
+  let preFocusEl = null;
+
+  // True on phones / tablets (coarse pointer = finger)
+  const isTouch = () => window.matchMedia('(pointer: coarse)').matches;
+
+  // ── Open ──────────────────────────────────────────────────────────
   const openMenu = () => {
+    preFocusEl = document.activeElement;
+
     hamburger.classList.add('open');
     mobileNav.classList.add('open');
     if (backdrop) backdrop.classList.add('open');
+
     hamburger.setAttribute('aria-expanded', 'true');
     mobileNav.removeAttribute('aria-hidden');
     document.body.style.overflow = 'hidden';
-    // Move focus to first link for keyboard accessibility
-    const firstLink = mobileNav.querySelector('.mobile-nav-link');
-    if (firstLink) requestAnimationFrame(() => firstLink.focus());
+
+    // Only auto-focus on keyboard/mouse — on touch the virtual keyboard
+    // would pop open unnecessarily if we focus an <a> link
+    if (!isTouch()) {
+      const firstLink = mobileNav.querySelector('.mobile-nav-link');
+      if (firstLink) requestAnimationFrame(() => firstLink.focus());
+    }
   };
 
+  // ── Close ─────────────────────────────────────────────────────────
   const closeMenu = () => {
     hamburger.classList.remove('open');
     mobileNav.classList.remove('open');
     if (backdrop) backdrop.classList.remove('open');
+
     hamburger.setAttribute('aria-expanded', 'false');
     mobileNav.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    hamburger.focus();
+
+    // Restore focus only on keyboard/pointer — never on touch
+    // (calling .focus() on touch after a tap causes iOS keyboard flash)
+    if (!isTouch() && preFocusEl && typeof preFocusEl.focus === 'function') {
+      preFocusEl.focus();
+    }
+    preFocusEl = null;
   };
 
-  hamburger.addEventListener('click', () => {
+  // ── Hamburger button ──────────────────────────────────────────────
+  hamburger.addEventListener('click', (e) => {
+    // stopPropagation so the document-level outside-click handler
+    // doesn't immediately close the menu we just opened
+    e.stopPropagation();
     hamburger.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // Close on nav link click
-  mobileLinks.forEach((link) => link.addEventListener('click', closeMenu));
-
-  // Close on backdrop click
-  if (backdrop) backdrop.addEventListener('click', closeMenu);
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && hamburger.classList.contains('open')) closeMenu();
+  // ── Close on any link/button inside the menu ──────────────────────
+  // 80 ms delay lets the browser start the navigation / download
+  // before the menu animates out, avoiding a jarring visual cut
+  closeTargets.forEach((el) => {
+    el.addEventListener('click', () => setTimeout(closeMenu, 80));
   });
 
-  // Close when clicking outside the drawer (but not the hamburger)
-  document.addEventListener('click', (e) => {
-    if (
-      mobileNav.classList.contains('open') &&
-      !mobileNav.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
+  // ── Close on backdrop tap / click ─────────────────────────────────
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+  // ── Close on Escape key ───────────────────────────────────────────
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      e.preventDefault();
       closeMenu();
     }
   });
 
-  // Trap focus inside the open drawer
+  // ── Close when clicking outside the menu ─────────────────────────
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.classList.contains('open')) return;
+    if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // ── Focus trap for keyboard users ─────────────────────────────────
   mobileNav.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab' || !mobileNav.classList.contains('open')) return;
+
     const focusable = Array.from(
-      mobileNav.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])')
-    ).filter((el) => !el.disabled && el.offsetParent !== null);
+      mobileNav.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => el.offsetParent !== null);
+
     if (!focusable.length) return;
     const first = focusable[0];
     const last  = focusable[focusable.length - 1];
+
     if (e.shiftKey) {
       if (document.activeElement === first) { e.preventDefault(); last.focus(); }
     } else {
@@ -527,20 +570,25 @@ function initSmoothScroll() {
 
       e.preventDefault();
 
-      const navHeight = parseInt(
-        getComputedStyle(document.documentElement)
-          .getPropertyValue('--nav-height') || '72',
-        10
-      );
+      // ── Read nav height live at click time ──────────────────────
+      // Never cache this at registration time — the CSS variable
+      // changes across breakpoints (72px desktop → 62px mobile) and
+      // may have changed since the page loaded.
+      // Reading the navbar's actual rendered height is more reliable
+      // than parsing the CSS variable, which can return an empty string
+      // on some mobile browsers before first layout.
+      const navbar = document.getElementById('navbar');
+      const navHeight = navbar ? navbar.getBoundingClientRect().height : 72;
+      const offset = navHeight + 8; // 8px breathing room
 
-      const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({
-        top,
+        top: Math.max(0, top),
         behavior: prefersReducedMotion() ? 'auto' : 'smooth',
       });
 
-      // Update URL without triggering scroll
+      // Update URL hash without triggering a native scroll jump
       history.pushState(null, '', targetId);
     });
   });
@@ -633,19 +681,36 @@ function initContactForm() {
 function initPageReveal() {
   if (prefersReducedMotion()) return;
 
-  // Fade body in gracefully on first load
-  document.body.style.opacity = '0';
-  document.body.style.transition = 'opacity 0.5s ease';
+  // ── Why the hard timeout exists ──────────────────────────────
+  // On slow devices / Safari / iOS, `transitionend` sometimes
+  // never fires, leaving body at opacity:0 (hamburger invisible).
+  // The hard timeout guarantees the body is always visible within
+  // 600 ms, regardless of transition or browser behaviour.
+  // The navbar has opacity:1 !important in CSS so it is never
+  // affected by this animation even if the timer hasn't fired yet.
+  // ─────────────────────────────────────────────────────────────
 
+  const reveal = () => {
+    document.body.style.opacity = '1';
+    document.body.style.transition = '';
+  };
+
+  // Safety net — force visible after 600 ms no matter what
+  const safetyTimer = setTimeout(reveal, 600);
+
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 0.45s ease';
+
+  // Double-rAF to guarantee the browser paints opacity:0 first
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       document.body.style.opacity = '1';
     });
   });
 
-  // Remove transition after it completes so it doesn't interfere
   document.body.addEventListener('transitionend', () => {
-    document.body.style.transition = '';
+    clearTimeout(safetyTimer);
+    reveal();
   }, { once: true });
 }
 
