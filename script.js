@@ -167,14 +167,25 @@ function initMobileMenu() {
   if (!hamburger || !mobileNav || hamburger.dataset.menuInit) return;
   hamburger.dataset.menuInit = '1';
 
-  // ── All interactive elements inside the menu that should close it ──
-  // Deliberately includes the resume <a> download button, not just nav links
-  const closeTargets = mobileNav.querySelectorAll(
-    '.mobile-nav-link, .mobile-nav-actions a, .mobile-nav-actions button'
-  );
-
   // Track what had focus before opening so we can restore it on close
   let preFocusEl = null;
+
+  const scrollToSection = (targetId) => {
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    const navbar = document.getElementById('navbar');
+    const navHeight = navbar ? navbar.getBoundingClientRect().height : 72;
+    const offset = navHeight + 8;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    });
+
+    history.pushState(null, '', targetId);
+  };
 
   // True on phones / tablets (coarse pointer = finger)
   const isTouch = () => window.matchMedia('(pointer: coarse)').matches;
@@ -225,11 +236,42 @@ function initMobileMenu() {
     hamburger.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // ── Close on any link/button inside the menu ──────────────────────
-  // 80 ms delay lets the browser start the navigation / download
-  // before the menu animates out, avoiding a jarring visual cut
-  closeTargets.forEach((el) => {
-    el.addEventListener('click', () => setTimeout(closeMenu, 80));
+  // ── Mobile section links: close the menu and scroll smoothly ─────
+  mobileNav.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      closeMenu();
+      requestAnimationFrame(() => scrollToSection(href));
+    });
+  });
+
+  // ── Resume action: close the menu and start the download ────────
+  mobileNav.querySelectorAll('.mobile-nav-actions a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      closeMenu();
+
+      setTimeout(() => {
+        const tempLink = document.createElement('a');
+        tempLink.href = href;
+        tempLink.download = link.getAttribute('download') || 'Muhammad Anfal.pdf';
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        tempLink.remove();
+      }, 120);
+    });
   });
 
   // ── Close on backdrop tap / click ─────────────────────────────────

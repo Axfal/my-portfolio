@@ -369,6 +369,28 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   box-shadow: 0 0 20px var(--accent-glow);
   transform: scale(1.05);
 }
+.logo-name1 {
+  color: white;
+  font-size: 1.4em;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.logo-name2 {
+  color:  var(--accent);
+  font-size: 1.4em;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .logo-name1,
+  .logo-name2 {
+    font-size: 1rem;
+  }
+}
 .logo-dot {
   width: 6px; height: 6px;
   background: var(--accent);
