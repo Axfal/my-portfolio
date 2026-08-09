@@ -90,6 +90,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Keep native hash navigation clear of the fixed navbar. */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
@@ -1085,43 +1090,54 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   overflow: hidden;
 }
 
-.about-photo {
+.about-photo-frame {
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(225,29,72,0.1);
+}
+
+.about-photo {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
   object-position: top center;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(225,29,72,0.1);
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  transition: transform var(--transition-slow);
   display: block;
 }
-.about-photo:hover {
-  transform: scale(1.02);
+.about-photo-frame:hover {
   box-shadow: var(--shadow-lg), 0 0 60px rgba(225,29,72,0.2);
+}
+.about-photo-frame:hover .about-photo {
+  transform: scale(1.02);
 }
 
 .about-badge-card {
   position: absolute;
-  bottom: -14px;
-  right: -14px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 0.65rem 0.9rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
-  /* never wider than the image minus a small gutter */
-  max-width: calc(100% + 14px);
-  /* allow badge text to wrap rather than overflow */
+  padding: 1rem 1rem;
+  background: linear-gradient(90deg, rgba(12, 20, 27, 0.96), rgba(11, 14, 20, 0.88));
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -12px 28px rgba(15, 23, 42, 0.2);
   white-space: normal;
 }
+
+/* Give the role panel a little more presence on desktop layouts. */
+@media (min-width: 1025px) {
+  .about-badge-card {
+    padding: 1.8rem 1.1rem;
+  }
+}
+
 .about-badge-card i {
   color: var(--accent);
   font-size: 1.1rem;
@@ -1145,6 +1161,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   white-space: normal;
   word-break: break-word;
 }
+
 
 /* Content col — min-width:0 prevents text from overflowing the grid cell */
 .about-content-col {
@@ -2415,4 +2432,20 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .hero-bg, .scroll-indicator, .marquee-section,
   .mobile-nav, .mobile-nav-backdrop { display: none; }
   body { background: white; color: black; }
+}
+
+/* Keep the current-role panel integrated with the photo on tablet and mobile. */
+@media (max-width: 1024px) {
+  .about-badge-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-self: auto;
+    max-width: none;
+    margin-top: 0;
+    transform: none;
+    white-space: normal;
+  }
 }
