@@ -1456,6 +1456,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   color: #22C55E;
   border: 1px solid rgba(34,197,94,0.3);
 }
+.timeline-badge-award {
+  background: rgba(245,158,11,0.14);
+  color: #FBBF24;
+  border: 1px solid rgba(245,158,11,0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 .timeline-date {
   font-size: 0.8125rem;
   color: var(--text-muted);
@@ -1543,11 +1551,29 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .project-card:hover::after { opacity: 1; }
 
-/* Project Image */
+/* Project Image — Light Theme Product Showcase */
 .project-card-image {
   position: relative;
-  height: 200px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: #F8FAFC;
+  transition: transform var(--transition-slow), filter var(--transition-base);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.04);
+  filter: contrast(1.02) saturate(1.03);
 }
 
 .project-img-placeholder {
@@ -1571,22 +1597,60 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, var(--bg-card) 100%);
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 70%, rgba(15, 23, 42, 0.08) 100%);
+  pointer-events: none;
 }
 
 .project-featured-badge {
   position: absolute;
   top: var(--space-md);
   right: var(--space-md);
+  z-index: 2;
   font-size: 0.7rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
   background: var(--accent);
   color: var(--text-white);
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* Featured Flagship Project Card */
+@media (min-width: 769px) {
+  .project-card-featured {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 993px) {
+  .project-card-featured {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    align-items: center;
+  }
+  .project-card-featured .project-card-image {
+    aspect-ratio: 16 / 9;
+    min-height: 320px;
+    height: 100%;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+  .project-card-featured .project-img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  }
 }
 
 /* Project Body */
@@ -1780,6 +1844,83 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.6;
 }
 .edu-highlight i { color: var(--accent); margin-top: 3px; flex-shrink: 0; font-size: 0.875rem; }
+
+/* Certificates & Awards Grid */
+.awards-grid {
+  max-width: 860px;
+  margin-inline: auto;
+  margin-top: var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.award-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.award-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow), var(--shadow-card);
+  transform: translateY(-4px);
+}
+
+.award-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--accent-dim);
+  border: 1px solid var(--border-accent);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.award-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.award-org {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.award-title {
+  font-size: 1.05rem;
+  font-weight: var(--fw-bold);
+  color: var(--text-white);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.award-desc {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============================================================
    16. GITHUB STATS SECTION

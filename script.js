@@ -280,18 +280,18 @@ function initMobileMenu() {
 function initTyped() {
   const el = document.getElementById('typed-text');
   if (!el || typeof Typed === 'undefined' || prefersReducedMotion()) {
-    if (el) el.textContent = 'Full-Stack Software Engineer';
+    if (el) el.textContent = 'Full Stack AI Engineer';
     return;
   }
 
   new Typed('#typed-text', {
     strings: [
-      'Full-Stack Software Engineer',
-      'Backend Systems Architect',
-      'Django & FastAPI Developer',
-      'Flutter App Developer',
-      'Cloud & AWS Engineer',
-      'REST API Specialist',
+      'Full Stack AI Engineer',
+      'Applied GenAI & LLM Engineer',
+      'RAG & LangGraph Architect',
+      'Python, FastAPI & Django Developer',
+      'React & Flutter Engineer',
+      'AWS Bedrock & Cloud Engineer',
     ],
     typeSpeed: 55,
     backSpeed: 30,
@@ -797,7 +797,7 @@ function initPageReveal() {
 (function initLazyReveal() {
   if (!('IntersectionObserver' in window)) return;
 
-  const images = document.querySelectorAll('img[loading="lazy"]');
+  const images = document.querySelectorAll('img[loading="lazy"]:not(.project-img)');
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -811,7 +811,7 @@ function initPageReveal() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0.01, rootMargin: '0px' }
   );
 
   images.forEach((img) => {
